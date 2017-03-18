@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class StatisticsTest {
     @Test
-    public void reset() throws Exception {
+    public void reset() {
         Statistics statistics = new Statistics();
         statistics.setAvg(11.11);
         statistics.setCount(12);
@@ -25,7 +25,7 @@ public class StatisticsTest {
     }
 
     @Test
-    public void updateValueWithEmptyStatistics() throws Exception {
+    public void updateValueWithEmptyStatistics() {
         Statistics statistics = new Statistics();
 
         // Method call
@@ -40,7 +40,7 @@ public class StatisticsTest {
     }
 
     @Test
-    public void updateValueWithExistingStatistics() throws Exception {
+    public void updateValueWithExistingStatistics() {
         Statistics statistics = new Statistics();
         statistics.setCount(12);
         statistics.setSum(121.56);
