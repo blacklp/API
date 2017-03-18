@@ -1,6 +1,0 @@
-com/api/Main.class
-com/api/service/StatisticsService.class
-com/api/model/Transaction.class
-com/api/model/Statistics.class
-com/api/controller/StatisticsController.class
-com/api/controller/TransactionsController.class
