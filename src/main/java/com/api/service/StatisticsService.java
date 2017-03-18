@@ -12,7 +12,7 @@ public class StatisticsService {
     private Statistics statistics = new Statistics(); // TODO: synchronized if needed
 
     public void addTransaction(Transaction transaction) {
-        if (transaction.getTimestamp() >= System.currentTimeMillis() - 6000000) { //FIXME: should be 60000
+        if (transaction.getTimestamp() >= System.currentTimeMillis() - 60000) {
             // TODO: Make 60000 a constant in Config class or so
             statistics.updateValue(transaction.getAmount());
         }
@@ -20,8 +20,6 @@ public class StatisticsService {
 
     @Scheduled(fixedRate = 60000) // TODO: Make this every 60 sec a constant in a Config class or so
     public void run() {
-        System.out.println("Running...");
-        System.out.println("Statistics: " + statistics);
         statistics.reset();
     }
 }

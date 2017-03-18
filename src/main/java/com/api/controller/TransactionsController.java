@@ -16,8 +16,6 @@ public class TransactionsController {
 
     @RequestMapping(method = RequestMethod.POST)
     public void postTransaction(@RequestBody Transaction transaction) {
-        System.out.println("Saving transaction...");
-
         statisticsService.addTransaction(transaction);
     }
 }

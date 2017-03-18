@@ -19,7 +19,6 @@ public class StatisticsController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public Statistics getStatistics() {
-        System.out.println("Returning current statistics");
         return statisticsService.getStatistics();
     }
 }
