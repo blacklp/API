@@ -1,5 +1,6 @@
 package com.api.service;
 
+import com.api.Config;
 import com.api.model.Statistics;
 import com.api.model.Transaction;
 import lombok.Getter;
@@ -12,13 +13,12 @@ public class StatisticsService {
     private Statistics statistics = new Statistics(); // TODO: synchronized if needed
 
     public void addTransaction(Transaction transaction) {
-        if (transaction.getTimestamp() >= System.currentTimeMillis() - 60000) {
-            // TODO: Make 60000 a constant in Config class or so
+        if (transaction.getTimestamp() >= System.currentTimeMillis() - Config.TIME_SPAN) {
             statistics.updateValue(transaction.getAmount());
         }
     }
 
-    @Scheduled(fixedRate = 60000) // TODO: Make this every 60 sec a constant in a Config class or so
+    @Scheduled(fixedRate = Config.TIME_SPAN)
     public void run() {
         statistics.reset();
     }
