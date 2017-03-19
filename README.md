@@ -18,9 +18,10 @@ The following statistics from the last 60 seconds are returned:
 - count or total number of transaction posted.
 
 ## How to run:
+
 1- Build the project:
 
-`mvn clean install`
+`mvn clean install -Dmaven.test.skip`
 
 
 2- Run the API:
@@ -28,3 +29,19 @@ The following statistics from the last 60 seconds are returned:
 `cd target`
 
 `java -jar api-1.0-SNAPSHOT.jar`
+
+3- Run the tests and static code checks:
+
+`mvn clean install pmd:pmd pmd:check findbugs:findbugs findbugs:check`
+
+## How to use the API:
+
+- Statistics endpoint:
+It accepts the GET method with no parameters in the following way: 
+
+`GET /statistics`
+
+- Transactions endpoint:
+It accepts the POST method with the JSON payload described above: 
+
+`POST /transactions`
