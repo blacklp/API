@@ -10,16 +10,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class StatisticsService {
     @Getter
-    private Statistics statistics = new Statistics(); // TODO: synchronized if needed
+    private Statistics statistics = new Statistics();
 
-    public void addTransaction(Transaction transaction) {
+    public synchronized void addTransaction(Transaction transaction) {
         if (transaction.getTimestamp() >= System.currentTimeMillis() - Config.TIME_SPAN) {
             statistics.updateValue(transaction.getAmount());
         }
     }
 
     @Scheduled(fixedRate = Config.TIME_SPAN)
-    public void run() {
+    public synchronized void run() {
         statistics.reset();
     }
 }
