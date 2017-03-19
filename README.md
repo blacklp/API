@@ -16,3 +16,15 @@ The following statistics from the last 60 seconds are returned:
 - min amount sent.
 - max amount sent.
 - count or total number of transaction posted.
+
+## How to run:
+1- Build the project:
+
+`mvn clean install`
+
+
+2- Run the API:
+
+`cd target`
+
+`java -jar api-1.0-SNAPSHOT.jar`
