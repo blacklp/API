@@ -10,8 +10,8 @@ import javax.validation.constraints.NotNull;
 public class Transaction {
 
     @NotNull(message = "Error: No Amount provided")
-    private Double amount;
+    private final Double amount;
 
     @NotNull(message = "Error: No Timestamp provided")
-    private Long timestamp;
+    private final Long timestamp;
 }
