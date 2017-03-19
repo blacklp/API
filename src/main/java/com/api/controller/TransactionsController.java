@@ -23,6 +23,7 @@ public class TransactionsController {
      *
      * @param transaction to be created in the system
      * @return HTTP code 204, NO_CONTENT with an empty JSON body if the transaction was correctly created.
+     * In case of error, the corresponding HTTP error code is returned.
      */
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Transaction> postTransaction(@Valid @RequestBody Transaction transaction) {
