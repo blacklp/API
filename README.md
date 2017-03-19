@@ -1,4 +1,6 @@
 # API
+![Build Status](https://travis-ci.org/blacklp/API.svg?branch=master) https://travis-ci.org/blacklp/API
+
 REST API used to handle POST requests to store transactions and to handle GET resquests to return statistics on the last transactions.
 
 A transaction consists of an amount and a timestamp. Therefore, they can be posted in this way:
